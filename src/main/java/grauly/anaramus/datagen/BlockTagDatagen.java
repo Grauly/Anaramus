@@ -11,6 +11,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
+import static grauly.anaramus.ModBlocks.POTION_CAULDRON;
+
 public class BlockTagDatagen extends FabricTagProvider.BlockTagProvider {
     public BlockTagDatagen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
         super(output, completableFuture);
@@ -22,8 +24,8 @@ public class BlockTagDatagen extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(PICKAXE_MINEABLE)
-                .add(Anaramus.POTION_CAULDRON);
+                .add(POTION_CAULDRON);
         getOrCreateTagBuilder(STONE_MININGLEVEL)
-                .add(Anaramus.POTION_CAULDRON);
+                .add(POTION_CAULDRON);
     }
 }
