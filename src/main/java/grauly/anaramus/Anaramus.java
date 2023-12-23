@@ -24,7 +24,7 @@ import net.minecraft.util.Rarity;
 public class Anaramus implements ModInitializer {
     public static final String MODID = "anaramus";
 
-    public static final Block POTION_CAULDRON = Registry.register(Registries.BLOCK, new Identifier(MODID,"potion_cauldron"), new PotionCauldron(FabricBlockSettings.create().hardness(2)));
+    public static final Block POTION_CAULDRON = Registry.register(Registries.BLOCK, new Identifier(MODID,"potion_cauldron"), new PotionCauldron(FabricBlockSettings.create().hardness(2).requiresTool()));
     public static final Item POTION_CAULDRON_ITEM = Registry.register(Registries.ITEM, new Identifier(MODID,"potion_cauldron"), new PolymerBlockItem(POTION_CAULDRON, new FabricItemSettings().rarity(Rarity.UNCOMMON), Items.CAULDRON));
     private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(POTION_CAULDRON_ITEM))
