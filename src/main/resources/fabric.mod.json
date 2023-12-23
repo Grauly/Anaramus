@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "anaramus",
+  "version": "${version}",
+  "name": "Anaramus",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/grauly/Anaramus"
+  },
+  "license": "MIT",
+  "icon": "assets/anaramus/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "grauly.anaramus.client.AnaramusClient"
+    ],
+    "main": [
+      "grauly.anaramus.Anaramus"
+    ],
+    "fabric-datagen": [
+      "grauly.anaramus.datagen.AnaramusDatagen"
+    ]
+  },
+  "mixins": [
+    "anaramus.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
