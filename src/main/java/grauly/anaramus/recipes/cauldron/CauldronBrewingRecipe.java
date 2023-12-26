@@ -15,11 +15,15 @@ import java.util.List;
 public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
 
     private final ArrayList<Ingredient> ingredients;
+    private final Ingredient activationIngredient;
+    private final int activationAmount;
     private final boolean needsFire;
     private final ItemStack result;
 
-    public CauldronBrewingRecipe(List<Ingredient> ingredients, boolean needsFire, ItemStack result) {
+    public CauldronBrewingRecipe(List<Ingredient> ingredients, Ingredient activationIngredient, int activationAmount, boolean needsFire, ItemStack result) {
         this.ingredients = new ArrayList<>(ingredients);
+        this.activationIngredient = activationIngredient;
+        this.activationAmount = activationAmount;
         this.needsFire = needsFire;
         this.result = result;
     }
@@ -67,7 +71,15 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
         return ingredients;
     }
 
+    public int getActivationAmount() {
+        return activationAmount;
+    }
+
     public ItemStack getRecipeResult() {
         return result;
+    }
+
+    public Ingredient getActivationIngredient() {
+        return activationIngredient;
     }
 }

@@ -9,5 +9,6 @@ public class AnaramusDatagen implements DataGeneratorEntrypoint {
         var pack = fabricDataGenerator.createPack();
         pack.addProvider(BlockTagDatagen::new);
         pack.addProvider(LootTableDatagen::new);
+        pack.addProvider(ItemTagDatagen::new);
     }
 }

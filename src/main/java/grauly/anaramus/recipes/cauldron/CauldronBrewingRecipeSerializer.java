@@ -11,6 +11,8 @@ public class CauldronBrewingRecipeSerializer implements RecipeSerializer<Cauldro
 
     public static final Codec<CauldronBrewingRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients").forGetter(CauldronBrewingRecipe::getCauldronIngredients),
+            Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("activationIngredient").forGetter(CauldronBrewingRecipe::getActivationIngredient),
+            Codec.INT.fieldOf("activationAmount").forGetter(CauldronBrewingRecipe::getActivationAmount),
             Codec.BOOL.fieldOf("needsFire").forGetter(CauldronBrewingRecipe::needsFire),
             ItemStack.CODEC.fieldOf("result").forGetter(CauldronBrewingRecipe::getRecipeResult)
     ).apply(instance,CauldronBrewingRecipe::new));
