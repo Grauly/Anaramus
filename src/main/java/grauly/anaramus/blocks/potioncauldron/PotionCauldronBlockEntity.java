@@ -91,7 +91,7 @@ public class PotionCauldronBlockEntity extends BlockEntity {
         //check  if on server
         if (getWorld() == null || getWorld().isClient()) return null;
         //check if cauldron is full
-        if (this.getCachedState().get(LeveledCauldronBlock.LEVEL) != 3) return null;
+        if (this.getCachedState().get(PotionCauldron.FLUID_LEVEL) != 3) return null;
 
         BlockPos checkPos = this.getPos().down();
         boolean hasHeat = getWorld().getBlockState(checkPos).isIn(ModTags.HEAT_SOURCES);
