@@ -39,7 +39,7 @@ sourceSets {
 }
 
 loom {
-
+    accessWidenerPath = file("src/main/resources/${project.modid}.accesswidener")
     runs {
         // This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
         datagen {

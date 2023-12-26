@@ -1,8 +1,6 @@
 package grauly.anaramus.blocks.potioncauldron;
 
-import grauly.anaramus.Anaramus;
 import grauly.anaramus.ModBlockEntities;
-import grauly.anaramus.ModRecipes;
 import grauly.anaramus.ModTags;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipe;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipeType;
@@ -13,7 +11,6 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 
@@ -34,8 +31,7 @@ public class PotionCauldronBlockEntity extends BlockEntity {
      * @return true if stack was fully inserted
      */
     public boolean insertItem(ItemStack stack) {
-        Anaramus.LOGGER.info("inserting");
-        if(stack.isIn(ModTags.CAULDRON_BLACKLIST)) return false;
+        if (stack.isIn(ModTags.CAULDRON_BLACKLIST)) return false;
 
         ItemStack lastStack = ItemStack.EMPTY;
         int lastItemIndex = 0;
@@ -87,32 +83,36 @@ public class PotionCauldronBlockEntity extends BlockEntity {
 
     /**
      * attempts to craft a recipe
+     *
      * @param activationItem the item the craft was activated with
      * @return the result ItemStack, or null if no craft succeeded
      */
     public ItemStack craft(ItemStack activationItem) {
         //check  if on server
-        if(getWorld() == null || getWorld().isClient()) return null;
+        if (getWorld() == null || getWorld().isClient()) return null;
         //check if cauldron is full
-        if(this.getCachedState().get(LeveledCauldronBlock.LEVEL) != 3) return null;
+        if (this.getCachedState().get(LeveledCauldronBlock.LEVEL) != 3) return null;
 
         BlockPos checkPos = this.getPos().down();
         boolean hasHeat = getWorld().getBlockState(checkPos).isIn(ModTags.HEAT_SOURCES);
         SimpleInventory craftingInventory = new SimpleInventory(cauldronInventory.toArray(ItemStack[]::new));
-        var foundRecipe = getWorld().getRecipeManager().getFirstMatch(CauldronBrewingRecipeType.INSTANCE,craftingInventory,getWorld());
+        var foundRecipe = getWorld().getRecipeManager().getFirstMatch(CauldronBrewingRecipeType.INSTANCE, craftingInventory, getWorld());
 
-        if(foundRecipe.isEmpty()) return null;
+        if (foundRecipe.isEmpty()) return null;
 
         CauldronBrewingRecipe recipe = foundRecipe.get().value();
 
-        if(recipe.needsFire() && !hasHeat) return null;
+        if (recipe.needsFire() && !hasHeat) return null;
 
-        if(recipe.getActivationIngredient().test(activationItem) && activationItem.getCount() >= recipe.getActivationAmount()) {
-            cauldronInventory.clear();
+        if (recipe.getActivationIngredient().test(activationItem) && activationItem.getCount() >= recipe.getActivationAmount()) {
             activationItem.setCount(activationItem.getCount() - recipe.getActivationAmount());
-            return recipe.craft(craftingInventory,getWorld().getRegistryManager());
+            return recipe.craft(craftingInventory, getWorld().getRegistryManager());
         }
         return null;
+    }
+
+    public void invalidateCraft() {
+        cauldronInventory.clear();
     }
 
     @Override
