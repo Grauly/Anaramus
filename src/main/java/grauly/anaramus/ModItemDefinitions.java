@@ -72,6 +72,24 @@ public class ModItemDefinitions {
                         new StatusEffectInstance(StatusEffects.LUCK, 8*60*20,i)
                 )
         );
+        var textStyle = Style.EMPTY.withItalic(false);
+        var nameText = Text.translatable("potions.anaramus.luck" + i).setStyle(textStyle);
+        stack.setCustomName(nameText);
+        return stack;
+    }
+
+    public static ItemStack getBlindExertionPotion() {
+        var stack = new ItemStack(Items.POTION);
+        PotionUtil.setCustomPotionEffects(stack, List.of(
+                        new StatusEffectInstance(StatusEffects.SPEED, 8*60*20,6),
+                        new StatusEffectInstance(StatusEffects.JUMP_BOOST,8*60*20, 3),
+                        new StatusEffectInstance(StatusEffects.DARKNESS, 8*60*20, 1),
+                        new StatusEffectInstance(StatusEffects.NAUSEA, 60*20,1)
+                )
+        );
+        var textStyle = Style.EMPTY.withItalic(false);
+        var nameText = Text.translatable("potions.anaramus.blind_exertion").setStyle(textStyle);
+        stack.setCustomName(nameText);
         return stack;
     }
 }

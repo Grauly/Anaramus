@@ -4,5 +4,9 @@
   "potions.anaramus.bad_omen": "Potion of Bad Omen",
   "potions.anaramus.miners_fervor": "Miners Fervor",
   "potions.anaramus.greater_poison": "Potion of Greater Poison",
-  "potions.anaramus.felix_felicitas": "Felix Felicitas"
+  "potions.anaramus.felix_felicitas": "Felix Felicitas",
+  "potions.anaramus.luck1": "Potion of Lesser Luck",
+  "potions.anaramus.luck2": "Potion of Luck",
+  "potions.anaramus.luck3": "Potion of Greater Luck",
+  "potions.anaramus.blind_exertion": "Blind Exertion"
 }

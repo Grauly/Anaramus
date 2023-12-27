@@ -8,12 +8,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.village.raid.Raid;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class RecipeDatagen extends FabricRecipeProvider {
         var badOmenRecipe = new CauldronBrewingRecipe(List.of(
                 AmountedIngredient.of(Items.GOAT_HORN),
                 AmountedIngredient.of(Items.CROSSBOW),
-                new AmountedIngredient(Ingredient.ofStacks(Raid.getOminousBanner()),1),
+                new AmountedIngredient(Ingredient.ofStacks(Raid.getOminousBanner()), 1),
                 AmountedIngredient.of(Items.SADDLE)
         ),
                 Ingredient.ofItems(Items.GLASS_BOTTLE),
@@ -72,23 +70,50 @@ public class RecipeDatagen extends FabricRecipeProvider {
 
 
         for (int i = 0; i < 3; i++) {
-            var ingredients = new ArrayList<>(List.of(AmountedIngredient.of(Items.SMALL_DRIPLEAF, i + 1)));
-            ingredients.addAll(
-                    AmountedIngredient.ofMany(
-                            Items.GLOW_BERRIES,
-                            Items.RABBIT_FOOT,
-                            Items.PINK_PETALS,
-                            Items.GLOW_LICHEN,
-                            Items.GLISTERING_MELON_SLICE
-                    ));
             var luckPotion = new CauldronBrewingRecipe(
-                    ingredients,
+                    AmountedIngredient.concat(
+                            AmountedIngredient.of(Items.SMALL_DRIPLEAF, i + 1),
+                            AmountedIngredient.ofMany(
+                                    Items.GLOW_BERRIES,
+                                    Items.RABBIT_FOOT,
+                                    Items.PINK_PETALS,
+                                    Items.GLOW_LICHEN,
+                                    Items.GLISTERING_MELON_SLICE
+                            )
+                    ),
                     Ingredient.ofItems(Items.GLASS_BOTTLE),
                     true,
                     false,
-                    ModItemDefinitions.getLuckPotion(i+1)
+                    ModItemDefinitions.getLuckPotion(i)
             );
             exporter.accept(new CauldronBrewingRecipeJsonProvider(luckPotion, "luck_" + (i + 1)));
         }
+
+
+        var blindExertion = new CauldronBrewingRecipe(
+                AmountedIngredient.concat(
+                        AmountedIngredient.of(Items.SUGAR, 3),
+                        AmountedIngredient.of(Items.LAPIS_LAZULI, 2),
+                        AmountedIngredient.ofMany(
+                                Items.PHANTOM_MEMBRANE,
+                                Items.GLOW_LICHEN,
+                                Items.PUMPKIN
+                        ),
+                        AmountedIngredient.of(Items.NETHER_SPROUTS, 2),
+                        AmountedIngredient.ofMany(
+                                Items.PITCHER_PLANT,
+                                Items.GLOW_BERRIES
+                        ),
+                        AmountedIngredient.of(Items.WARPED_ROOTS, 2),
+                        AmountedIngredient.of(Items.HANGING_ROOTS, 3)
+                ),
+                Ingredient.ofItems(Items.GLASS_BOTTLE),
+                true,
+                false,
+                ModItemDefinitions.getBlindExertionPotion()
+        );
+        exporter.accept(new CauldronBrewingRecipeJsonProvider(blindExertion, "blind_exertion"));
+
+
     }
 }
