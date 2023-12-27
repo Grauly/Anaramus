@@ -1,5 +1,6 @@
 package grauly.anaramus.recipes.cauldron;
 
+import eu.pb4.polymer.core.api.item.PolymerRecipe;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
+public class CauldronBrewingRecipe implements Recipe<SimpleInventory>, PolymerRecipe {
 
     private final ArrayList<Ingredient> ingredients;
     private final Ingredient activationIngredient;
@@ -79,7 +80,7 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
         return activationIngredient;
     }
 
-    public boolean consumeAllWater() {
+    public boolean consumesAllWater() {
         return consumeAllWater;
     }
 }

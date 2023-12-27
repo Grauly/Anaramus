@@ -1,0 +1,44 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": false,
+  "ingredients": [
+    {
+      "item": "minecraft:small_dripleaf"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:rabbit_foot"
+    },
+    {
+      "item": "minecraft:pink_petals"
+    },
+    {
+      "item": "minecraft:glow_lichen"
+    },
+    {
+      "item": "minecraft:glistering_melon_slice"
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:potion",
+    "tag": {
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 3,
+          "duration": 9600,
+          "id": "minecraft:luck",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ]
+    }
+  }
+}

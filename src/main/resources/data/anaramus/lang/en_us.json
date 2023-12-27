@@ -1,5 +1,8 @@
 {
   "itemGroup.anaramus.main": "Anaramus Content",
   "block.anaramus.potion_cauldron": "Potion Cauldron",
-  "potions.anaramus.bad_omen": "Potion of Bad Omen"
+  "potions.anaramus.bad_omen": "Potion of Bad Omen",
+  "potions.anaramus.miners_fervor": "Miners Fervor",
+  "potions.anaramus.greater_poison": "Potion of Greater Poison",
+  "potions.anaramus.felix_felicitas": "Felix Felicitas"
 }

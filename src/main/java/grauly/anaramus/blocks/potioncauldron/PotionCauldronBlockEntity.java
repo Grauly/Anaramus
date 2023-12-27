@@ -5,14 +5,18 @@ import grauly.anaramus.ModTags;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipe;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipeType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LeveledCauldronBlock;
+import net.minecraft.block.CauldronBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+
+import java.util.ArrayList;
 
 public class PotionCauldronBlockEntity extends BlockEntity {
 
@@ -87,15 +91,13 @@ public class PotionCauldronBlockEntity extends BlockEntity {
      * @param activationItem the item the craft was activated with
      * @return the result ItemStack, or null if no craft succeeded
      */
-    public ItemStack craft(ItemStack activationItem) {
+    public CraftResult craft(ItemStack activationItem) {
         //check  if on server
         if (getWorld() == null || getWorld().isClient()) return null;
-        //check if cauldron is full
-        if (this.getCachedState().get(PotionCauldron.FLUID_LEVEL) != 3) return null;
 
         BlockPos checkPos = this.getPos().down();
         boolean hasHeat = getWorld().getBlockState(checkPos).isIn(ModTags.HEAT_SOURCES);
-        SimpleInventory craftingInventory = new SimpleInventory(cauldronInventory.toArray(ItemStack[]::new));
+        SimpleInventory craftingInventory = retrieveRelevantItems();
         var foundRecipe = getWorld().getRecipeManager().getFirstMatch(CauldronBrewingRecipeType.INSTANCE, craftingInventory, getWorld());
 
         if (foundRecipe.isEmpty()) return null;
@@ -105,13 +107,25 @@ public class PotionCauldronBlockEntity extends BlockEntity {
         if (recipe.needsFire() && !hasHeat) return null;
 
         if (recipe.getActivationIngredient().test(activationItem)) {
-            return recipe.craft(craftingInventory, getWorld().getRegistryManager());
+            return new CraftResult(recipe.craft(craftingInventory, getWorld().getRegistryManager()),recipe.consumesAllWater());
         }
         return null;
     }
 
+    protected SimpleInventory retrieveRelevantItems() {
+        ArrayList<ItemStack> foundItems = new ArrayList<>(cauldronInventory);
+        foundItems.removeIf(ItemStack::isEmpty);
+        return new SimpleInventory(foundItems.toArray(ItemStack[]::new));
+    }
+
     public void invalidateCraft() {
         cauldronInventory.clear();
+    }
+
+    public void printContents(PlayerEntity player) {
+        StringBuilder s = new StringBuilder();
+        retrieveRelevantItems().stacks.forEach(i -> s.append(i.toString()).append(", "));
+        player.sendMessage(Text.literal(s.toString()));
     }
 
     @Override
@@ -126,4 +140,6 @@ public class PotionCauldronBlockEntity extends BlockEntity {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, cauldronInventory, false);
     }
+
+    record CraftResult(ItemStack result, boolean clearCauldron) {};
 }

@@ -13,6 +13,7 @@ import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -45,8 +46,12 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
             var craftResult = cauldronBlockEntity.craft(handStack);
             if (craftResult != null) {
                 //empty the cauldron
-                decrementFluidLevel(state, world, pos);
-                player.setStackInHand(hand, ItemUsage.exchangeStack(handStack, player, craftResult));
+                if (craftResult.clearCauldron()) {
+                    emptyFluidLevel(state, world, pos);
+                } else {
+                    decrementFluidLevel(state, world, pos);
+                }
+                player.setStackInHand(hand, ItemUsage.exchangeStack(handStack, player, craftResult.result()));
                 playCraftCompleteEffect(world, pos);
                 return ActionResult.SUCCESS;
             }
@@ -66,6 +71,14 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
         if (filled && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
             cauldronBlockEntity.invalidateCraft();
             return ActionResult.SUCCESS;
+        }
+        if (handStack.isOf(Items.BLAZE_ROD) && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
+            cauldronBlockEntity.printContents(player);
+        }
+        if (handStack.isIn(ItemTags.SHOVELS) && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
+            cauldronBlockEntity.invalidateCraft();
+            emptyFluidLevel(state, world, pos);
+            playCraftAbortedEffect(world,pos);
         }
         return super.onUse(state, world, pos, player, hand, hit);
     }
@@ -142,6 +155,9 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
 
     protected void playCraftCompleteEffect(World world, BlockPos pos) {
 
+    }
+
+    private void playCraftAbortedEffect(World world, BlockPos pos) {
     }
 
     protected boolean isEntityInWater(BlockState state, BlockPos pos, Entity entity) {
