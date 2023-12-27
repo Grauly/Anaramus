@@ -3,6 +3,7 @@ package grauly.anaramus.recipes.cauldron;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import eu.pb4.polymer.core.api.utils.PolymerObject;
+import grauly.anaramus.recipes.AmountedIngredient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
@@ -11,7 +12,7 @@ import net.minecraft.recipe.RecipeSerializer;
 public class CauldronBrewingRecipeSerializer implements RecipeSerializer<CauldronBrewingRecipe>, PolymerObject {
 
     public static final Codec<CauldronBrewingRecipe> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients").forGetter(CauldronBrewingRecipe::getCauldronIngredients),
+            AmountedIngredient.CODEC.listOf().fieldOf("ingredients").forGetter(CauldronBrewingRecipe::getCauldronIngredients),
             Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("activationIngredient").forGetter(CauldronBrewingRecipe::getActivationIngredient),
             Codec.BOOL.fieldOf("needsFire").forGetter(CauldronBrewingRecipe::needsFire),
             Codec.BOOL.fieldOf("consumeAllWater").forGetter(CauldronBrewingRecipe::consumesAllWater),

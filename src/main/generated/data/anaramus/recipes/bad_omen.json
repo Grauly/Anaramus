@@ -6,16 +6,28 @@
   "consumeAllWater": true,
   "ingredients": [
     {
-      "item": "minecraft:goat_horn"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:goat_horn"
+      }
     },
     {
-      "item": "minecraft:crossbow"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:crossbow"
+      }
     },
     {
-      "item": "minecraft:white_banner"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:white_banner"
+      }
     },
     {
-      "item": "minecraft:saddle"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:saddle"
+      }
     }
   ],
   "needsFire": true,

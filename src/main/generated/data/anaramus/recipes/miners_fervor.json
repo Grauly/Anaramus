@@ -6,19 +6,34 @@
   "consumeAllWater": false,
   "ingredients": [
     {
-      "item": "minecraft:emerald"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:emerald"
+      }
     },
     {
-      "item": "minecraft:moss_block"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:moss_block"
+      }
     },
     {
-      "item": "minecraft:torchflower"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:torchflower"
+      }
     },
     {
-      "item": "minecraft:lily_of_the_valley"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:lily_of_the_valley"
+      }
     },
     {
-      "item": "minecraft:glow_berries"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glow_berries"
+      }
     }
   ],
   "needsFire": true,

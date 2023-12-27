@@ -1,6 +1,7 @@
 package grauly.anaramus.datagen;
 
 import grauly.anaramus.ModItemDefinitions;
+import grauly.anaramus.recipes.AmountedIngredient;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipe;
 import grauly.anaramus.recipes.cauldron.CauldronBrewingRecipeJsonProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -28,10 +29,10 @@ public class RecipeDatagen extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         var badOmenRecipe = new CauldronBrewingRecipe(List.of(
-                Ingredient.ofItems(Items.GOAT_HORN),
-                Ingredient.ofItems(Items.CROSSBOW),
-                Ingredient.ofStacks(Raid.getOminousBanner()),
-                Ingredient.ofItems(Items.SADDLE)
+                AmountedIngredient.of(Items.GOAT_HORN),
+                AmountedIngredient.of(Items.CROSSBOW),
+                new AmountedIngredient(Ingredient.ofStacks(Raid.getOminousBanner()),1),
+                AmountedIngredient.of(Items.SADDLE)
         ),
                 Ingredient.ofItems(Items.GLASS_BOTTLE),
                 true,
@@ -40,7 +41,7 @@ public class RecipeDatagen extends FabricRecipeProvider {
         exporter.accept(new CauldronBrewingRecipeJsonProvider(badOmenRecipe, "bad_omen"));
 
 
-        var minersFervorRecipe = new CauldronBrewingRecipe(itemsToIngredients(
+        var minersFervorRecipe = new CauldronBrewingRecipe(AmountedIngredient.ofMany(
                 Items.EMERALD,
                 Items.MOSS_BLOCK,
                 Items.TORCHFLOWER,
@@ -55,7 +56,7 @@ public class RecipeDatagen extends FabricRecipeProvider {
         exporter.accept(new CauldronBrewingRecipeJsonProvider(minersFervorRecipe, "miners_fervor"));
 
 
-        var greaterPoison = new CauldronBrewingRecipe(itemsToIngredients(
+        var greaterPoison = new CauldronBrewingRecipe(AmountedIngredient.ofMany(
                 Items.FERMENTED_SPIDER_EYE,
                 Items.PUFFERFISH,
                 Items.LILY_OF_THE_VALLEY,
@@ -71,9 +72,9 @@ public class RecipeDatagen extends FabricRecipeProvider {
 
 
         for (int i = 0; i < 3; i++) {
-            var ingredients = new ArrayList<>(List.of(Ingredient.ofStacks(new ItemStack(Items.SMALL_DRIPLEAF, i + 1))));
+            var ingredients = new ArrayList<>(List.of(AmountedIngredient.of(Items.SMALL_DRIPLEAF, i + 1)));
             ingredients.addAll(
-                    itemsToIngredients(
+                    AmountedIngredient.ofMany(
                             Items.GLOW_BERRIES,
                             Items.RABBIT_FOOT,
                             Items.PINK_PETALS,

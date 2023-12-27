@@ -1,6 +1,7 @@
 package grauly.anaramus.recipes.cauldron;
 
 import eu.pb4.polymer.core.api.item.PolymerRecipe;
+import grauly.anaramus.recipes.AmountedIngredient;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
@@ -15,13 +16,13 @@ import java.util.List;
 
 public class CauldronBrewingRecipe implements Recipe<SimpleInventory>, PolymerRecipe {
 
-    private final ArrayList<Ingredient> ingredients;
+    private final ArrayList<AmountedIngredient> ingredients;
     private final Ingredient activationIngredient;
     private final boolean needsFire;
     private final boolean consumeAllWater;
     private final ItemStack result;
 
-    public CauldronBrewingRecipe(List<Ingredient> ingredients, Ingredient activationIngredient, boolean needsFire, boolean consumeAllWater, ItemStack result) {
+    public CauldronBrewingRecipe(List<AmountedIngredient> ingredients, Ingredient activationIngredient, boolean needsFire, boolean consumeAllWater, ItemStack result) {
         this.ingredients = new ArrayList<>(ingredients);
         this.activationIngredient = activationIngredient;
         this.needsFire = needsFire;
@@ -29,12 +30,13 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory>, PolymerRe
         this.result = result;
     }
 
+
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
         boolean correct = true;
         if (inventory.stacks.size() < ingredients.size()) return false;
         for (int i = 0; i < ingredients.size(); i++) {
-            correct &= ingredients.get(i).test(inventory.stacks.get(i));
+            correct &= ingredients.get(i).ingredient().test(inventory.stacks.get(i)) && ingredients.get(i).amount() == inventory.stacks.get(i).getCount();
         }
         return correct;
     }
@@ -68,7 +70,7 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory>, PolymerRe
         return needsFire;
     }
 
-    public List<Ingredient> getCauldronIngredients() {
+    public List<AmountedIngredient> getCauldronIngredients() {
         return ingredients;
     }
 

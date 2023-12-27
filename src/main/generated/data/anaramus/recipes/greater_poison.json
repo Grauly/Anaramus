@@ -6,19 +6,34 @@
   "consumeAllWater": false,
   "ingredients": [
     {
-      "item": "minecraft:fermented_spider_eye"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:fermented_spider_eye"
+      }
     },
     {
-      "item": "minecraft:pufferfish"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:pufferfish"
+      }
     },
     {
-      "item": "minecraft:lily_of_the_valley"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:lily_of_the_valley"
+      }
     },
     {
-      "item": "minecraft:glow_lichen"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glow_lichen"
+      }
     },
     {
-      "item": "minecraft:wither_rose"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:wither_rose"
+      }
     }
   ],
   "needsFire": true,

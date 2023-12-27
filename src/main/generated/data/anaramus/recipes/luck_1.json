@@ -6,22 +6,40 @@
   "consumeAllWater": false,
   "ingredients": [
     {
-      "item": "minecraft:small_dripleaf"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:small_dripleaf"
+      }
     },
     {
-      "item": "minecraft:glow_berries"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glow_berries"
+      }
     },
     {
-      "item": "minecraft:rabbit_foot"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:rabbit_foot"
+      }
     },
     {
-      "item": "minecraft:pink_petals"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:pink_petals"
+      }
     },
     {
-      "item": "minecraft:glow_lichen"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glow_lichen"
+      }
     },
     {
-      "item": "minecraft:glistering_melon_slice"
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glistering_melon_slice"
+      }
     }
   ],
   "needsFire": true,
