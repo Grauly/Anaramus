@@ -16,15 +16,15 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
 
     private final ArrayList<Ingredient> ingredients;
     private final Ingredient activationIngredient;
-    private final int activationAmount;
     private final boolean needsFire;
+    private final boolean consumeAllWater;
     private final ItemStack result;
 
-    public CauldronBrewingRecipe(List<Ingredient> ingredients, Ingredient activationIngredient, int activationAmount, boolean needsFire, ItemStack result) {
+    public CauldronBrewingRecipe(List<Ingredient> ingredients, Ingredient activationIngredient, boolean needsFire, boolean consumeAllWater, ItemStack result) {
         this.ingredients = new ArrayList<>(ingredients);
         this.activationIngredient = activationIngredient;
-        this.activationAmount = activationAmount;
         this.needsFire = needsFire;
+        this.consumeAllWater = consumeAllWater;
         this.result = result;
     }
 
@@ -55,7 +55,7 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
+        return CauldronBrewingRecipeSerializer.INSTANCE;
     }
 
     @Override
@@ -71,15 +71,15 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory> {
         return ingredients;
     }
 
-    public int getActivationAmount() {
-        return activationAmount;
-    }
-
     public ItemStack getRecipeResult() {
         return result;
     }
 
     public Ingredient getActivationIngredient() {
         return activationIngredient;
+    }
+
+    public boolean consumeAllWater() {
+        return consumeAllWater;
     }
 }

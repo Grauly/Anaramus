@@ -19,15 +19,14 @@ public class ItemTagDatagen extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTags.CAULDRON_BLACKLIST)
-                .addTag(ItemTags.TRIMMABLE_ARMOR)
-                .addTag(ItemTags.SWORDS)
-                .addTag(ItemTags.AXES)
-                .addTag(ItemTags.HOES)
-                .addTag(ItemTags.PICKAXES)
-                .addTag(ItemTags.SHOVELS)
+                .addOptionalTag(ItemTags.TRIMMABLE_ARMOR)
+                .addOptionalTag(ItemTags.SWORDS)
+                .addOptionalTag(ItemTags.AXES)
+                .addOptionalTag(ItemTags.HOES)
+                .addOptionalTag(ItemTags.PICKAXES)
+                .addOptionalTag(ItemTags.SHOVELS)
                 .add(Items.ELYTRA)
                 .add(Items.BOW)
-                .add(Items.CROSSBOW)
                 .add(Items.TRIDENT)
                 .add(Items.SHIELD);
     }

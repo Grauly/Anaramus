@@ -1,0 +1,57 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": true,
+  "ingredients": [
+    {
+      "item": "minecraft:goat_horn"
+    },
+    {
+      "item": "minecraft:crossbow"
+    },
+    {
+      "item": "minecraft:white_banner"
+    },
+    {
+      "item": "minecraft:saddle"
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:potion",
+    "tag": {
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 0,
+          "duration": 24000,
+          "id": "minecraft:bad_omen",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 0,
+          "duration": 600,
+          "id": "minecraft:nausea",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 0,
+          "duration": 2400,
+          "id": "minecraft:weakness",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.bad_omen\"}"
+      }
+    }
+  }
+}

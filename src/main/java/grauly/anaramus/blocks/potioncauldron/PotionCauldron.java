@@ -1,7 +1,6 @@
 package grauly.anaramus.blocks.potioncauldron;
 
 import eu.pb4.polymer.core.api.block.PolymerBlock;
-import grauly.anaramus.Anaramus;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BlockEntity;
@@ -16,10 +15,8 @@ import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -34,40 +31,39 @@ import static net.minecraft.block.LeveledCauldronBlock.LEVEL;
 
 public class PotionCauldron extends Block implements PolymerBlock, BlockEntityProvider {
 
-    public static final IntProperty FLUID_LEVEL = IntProperty.of("level",0,3);
+    public static final IntProperty FLUID_LEVEL = IntProperty.of("level", 0, 3);
 
     public PotionCauldron(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(FLUID_LEVEL,0));
+        setDefaultState(getDefaultState().with(FLUID_LEVEL, 0));
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack handStack = player.getStackInHand(hand);
-        if(world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
+        if (world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
             var craftResult = cauldronBlockEntity.craft(handStack);
-            if(craftResult != null) {
+            if (craftResult != null) {
                 //empty the cauldron
-                emptyFluidLevel(state,world,pos);
-                ItemEntity itemEntity = new ItemEntity(world,pos.getX() +0.5, pos.getY() + 0.5, pos.getZ() + 0.5, craftResult);
-                world.spawnEntity(itemEntity);
+                decrementFluidLevel(state, world, pos);
+                player.setStackInHand(hand, ItemUsage.exchangeStack(handStack, player, craftResult));
                 playCraftCompleteEffect(world, pos);
                 return ActionResult.SUCCESS;
             }
         }
         boolean filled = false;
-        if(handStack.isOf(Items.WATER_BUCKET)) {
+        if (handStack.isOf(Items.WATER_BUCKET)) {
             filled = state.get(FLUID_LEVEL) != 3;
-            CauldronBehavior.fillCauldron(world,pos,player,hand,handStack,getDefaultState().with(FLUID_LEVEL,3),SoundEvents.ITEM_BUCKET_EMPTY);
+            CauldronBehavior.fillCauldron(world, pos, player, hand, handStack, getDefaultState().with(FLUID_LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
         }
-        if(handStack.isOf(Items.POTION) && PotionUtil.getPotion(handStack) == Potions.WATER) {
+        if (handStack.isOf(Items.POTION) && PotionUtil.getPotion(handStack) == Potions.WATER) {
             filled = state.get(FLUID_LEVEL) != 3;
             player.setStackInHand(hand, ItemUsage.exchangeStack(handStack, player, new ItemStack(Items.GLASS_BOTTLE)));
-            incrementFluidLevel(state,world,pos);
+            incrementFluidLevel(state, world, pos);
             world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0f, 1.0f);
             world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
         }
-        if(filled && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
+        if (filled && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity) {
             cauldronBlockEntity.invalidateCraft();
             return ActionResult.SUCCESS;
         }
@@ -77,14 +73,14 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         //replicate vanilla logic
-        if(entity.isOnFire() && isEntityInWater(state,pos,entity)) {
+        if (entity.isOnFire() && isEntityInWater(state, pos, entity)) {
             entity.extinguishWithSound();
-            if(entity.canModifyAt(world, pos)) {
-                decrementFluidLevel(state,world,pos);
+            if (entity.canModifyAt(world, pos)) {
+                decrementFluidLevel(state, world, pos);
             }
         }
         //own logic
-        if(entity instanceof ItemEntity itemEntity && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity && isEntityInWater(state,pos,entity)) {
+        if (entity instanceof ItemEntity itemEntity && world.getBlockEntity(pos) instanceof PotionCauldronBlockEntity cauldronBlockEntity && isEntityInWater(state, pos, entity)) {
             ItemStack stack = itemEntity.getStack();
             boolean consumed = cauldronBlockEntity.insertItem(stack);
             if (consumed) {
@@ -112,22 +108,22 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
     }
 
     public void decrementFluidLevel(BlockState state, World world, BlockPos pos) {
-        state = state.with(FLUID_LEVEL,Math.max(0,state.get(FLUID_LEVEL) -1));
+        state = state.with(FLUID_LEVEL, Math.max(0, state.get(FLUID_LEVEL) - 1));
         confirmBlockStateChange(state, world, pos);
     }
 
     public void incrementFluidLevel(BlockState state, World world, BlockPos pos) {
-        state = state.with(FLUID_LEVEL,Math.min(3,state.get(FLUID_LEVEL) +1));
+        state = state.with(FLUID_LEVEL, Math.min(3, state.get(FLUID_LEVEL) + 1));
         confirmBlockStateChange(state, world, pos);
     }
 
     public void emptyFluidLevel(BlockState state, World world, BlockPos pos) {
-        state = state.with(FLUID_LEVEL,0);
+        state = state.with(FLUID_LEVEL, 0);
         confirmBlockStateChange(state, world, pos);
     }
 
     public void fullFluidLevel(BlockState state, World world, BlockPos pos) {
-        state = state.with(FLUID_LEVEL,3);
+        state = state.with(FLUID_LEVEL, 3);
         confirmBlockStateChange(state, world, pos);
     }
 
@@ -137,10 +133,10 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
     }
 
     protected void playIngredientAddEffect(World world, BlockPos pos) {
-        world.playSoundAtBlockCenter(pos, SoundEvents.BLOCK_BREWING_STAND_BREW, SoundCategory.BLOCKS, 1,1,true);
-        world.playSoundAtBlockCenter(pos, SoundEvents.ENTITY_GENERIC_SPLASH, SoundCategory.BLOCKS, 1,1,true);
+        world.playSoundAtBlockCenter(pos, SoundEvents.BLOCK_BREWING_STAND_BREW, SoundCategory.BLOCKS, 1, 1, true);
+        world.playSoundAtBlockCenter(pos, SoundEvents.ENTITY_GENERIC_SPLASH, SoundCategory.BLOCKS, 1, 1, true);
         for (int i = 0; i < 100; i++) {
-            world.addParticle(ParticleTypes.BUBBLE,pos.getX() + 0.5,pos.getY()+1, pos.getZ() + 0.5,0,0.1,0);
+            world.addParticle(ParticleTypes.BUBBLE, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0, 0.1, 0);
         }
     }
 
@@ -149,11 +145,11 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
     }
 
     protected boolean isEntityInWater(BlockState state, BlockPos pos, Entity entity) {
-        return entity.getY() < (double)pos.getY() + this.getFluidHeight(state) && entity.getBoundingBox().maxY > (double)pos.getY() + 0.25;
+        return entity.getY() < (double) pos.getY() + this.getFluidHeight(state) && entity.getBoundingBox().maxY > (double) pos.getY() + 0.25;
     }
 
     protected double getFluidHeight(BlockState state) {
-        return (6.0 + (double)state.get(FLUID_LEVEL) * 3.0) / 16.0;
+        return (6.0 + (double) state.get(FLUID_LEVEL) * 3.0) / 16.0;
     }
 
     @Override
@@ -165,12 +161,12 @@ public class PotionCauldron extends Block implements PolymerBlock, BlockEntityPr
     public BlockState getPolymerBlockState(BlockState state) {
         return state.get(FLUID_LEVEL) == 0 ?
                 Blocks.CAULDRON.getDefaultState() :
-                getPolymerBlock(state).getDefaultState().with(LEVEL,state.get(FLUID_LEVEL));
+                getPolymerBlock(state).getDefaultState().with(LEVEL, state.get(FLUID_LEVEL));
     }
 
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new PotionCauldronBlockEntity(pos,state);
+        return new PotionCauldronBlockEntity(pos, state);
     }
 }

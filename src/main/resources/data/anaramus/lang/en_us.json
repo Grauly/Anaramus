@@ -1,4 +1,5 @@
 {
   "itemGroup.anaramus.main": "Anaramus Content",
-  "block.anaramus.potion_cauldron": "Potion Cauldron"
+  "block.anaramus.potion_cauldron": "Potion Cauldron",
+  "potions.anaramus.bad_omen": "Potion of Bad Omen"
 }

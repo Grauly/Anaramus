@@ -23,6 +23,7 @@ public class ModItems {
             .displayName(Text.translatable("itemGroup.anaramus.main"))
             .entries((context, entries) -> {
                 entries.add(POTION_CAULDRON_ITEM);
+                entries.add(ModItemDefinitions.getBadOmenPotion());
             })
             .build();
 }

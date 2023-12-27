@@ -10,5 +10,6 @@ public class AnaramusDatagen implements DataGeneratorEntrypoint {
         pack.addProvider(BlockTagDatagen::new);
         pack.addProvider(LootTableDatagen::new);
         pack.addProvider(ItemTagDatagen::new);
+        pack.addProvider(RecipeDatagen::new);
     }
 }

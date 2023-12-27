@@ -104,8 +104,7 @@ public class PotionCauldronBlockEntity extends BlockEntity {
 
         if (recipe.needsFire() && !hasHeat) return null;
 
-        if (recipe.getActivationIngredient().test(activationItem) && activationItem.getCount() >= recipe.getActivationAmount()) {
-            activationItem.setCount(activationItem.getCount() - recipe.getActivationAmount());
+        if (recipe.getActivationIngredient().test(activationItem)) {
             return recipe.craft(craftingInventory, getWorld().getRegistryManager());
         }
         return null;
