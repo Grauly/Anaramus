@@ -105,6 +105,7 @@ public class ModItemDefinitions {
                 List.of(
                         new StatusEffectInstance(StatusEffects.WATER_BREATHING, 8 * 60 * 20, 1),
                         new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 8 * 60 * 20, 1),
+                        new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 8 * 60 * 20, 1),
                         new StatusEffectInstance(StatusEffects.NIGHT_VISION, 8 * 60 * 20, 1)
                 ),
                 new Color(153, 153, 255),
