@@ -11,5 +11,21 @@
   "potions.anaramus.blind_exertion": "Blind Exertion",
   "potions.anaramus.berserkers_rage": "Berserker's Rage",
   "potions.anaramus.neptunes_wake": "Neptunes Wake",
-  "potions.anaramus.paralysis": "Potion of Paralysis"
+  "potions.anaramus.paralysis": "Potion of Paralysis",
+  "potions.anaramus.vitalization": "Potion of Vitality",
+  "potions.anaramus.greater_healing": "Potion of Greater Healing",
+  "potions.anaramus.floatation": "Potion of Floatation",
+  "potions.anaramus.stoneskin": "Stoneskin Potion",
+
+  "potion.potency.1": "I",
+  "potion.potency.2": "II",
+  "potion.potency.3": "IIV",
+  "potion.potency.4": "IV",
+  "potion.potency.5": "V",
+  "potion.potency.6": "VI",
+  "potion.potency.7": "VII",
+  "potion.potency.8": "IIX",
+  "potion.potency.9": "IX",
+  "potion.potency.10": "X",
+  "potion.potency,100": "C"
 }

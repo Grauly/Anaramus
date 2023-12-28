@@ -36,6 +36,10 @@ public class ModItems {
                 putAllPotionVariants(entries, ModItemDefinitions::getBerserkersRagePotion);
                 putAllPotionVariants(entries, ModItemDefinitions::getNeptunesWakePotion);
                 putAllPotionVariants(entries, ModItemDefinitions::getParalysisPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getVitalizationPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getFloatationPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getGreaterHealingPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getStoneSkinPotion);
             })
             .build();
 
