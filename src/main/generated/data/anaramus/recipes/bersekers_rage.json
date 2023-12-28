@@ -1,0 +1,150 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": true,
+  "ingredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:sugar"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:magma_cream"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:echo_shard"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:goat_horn"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:crimson_fungus"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:sea_pickle"
+      }
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:potion",
+    "tag": {
+      "CustomPotionColor": -5037056,
+      "HideFlags": 32,
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 4,
+          "duration": 4800,
+          "id": "minecraft:strength",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 2,
+          "duration": 2400,
+          "id": "minecraft:speed",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 2,
+          "duration": 3600,
+          "id": "minecraft:haste",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 4800,
+          "factor_calculation_data": {
+            "factor_current": 0.0,
+            "factor_previous_frame": 0.0,
+            "factor_start": 0.0,
+            "factor_target": 1.0,
+            "had_effect_last_tick": 0,
+            "padding_duration": 22,
+            "ticks_active": 0
+          },
+          "id": "minecraft:darkness",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 600,
+          "id": "minecraft:wither",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.strength\"},{\"translate\":\"potion.potency.4\"}]},{\"text\":\"04:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.speed\"},{\"translate\":\"potion.potency.2\"}]},{\"text\":\"02:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.haste\"},{\"translate\":\"potion.potency.2\"}]},{\"text\":\"03:00\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.darkness\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"04:00\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.wither\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"00:30\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"15\",{\"translate\":\"attribute.name.generic.attack_damage\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.2\",\"with\":[\"60\",{\"translate\":\"attribute.name.generic.movement_speed\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.2\",\"with\":[\"30\",{\"translate\":\"attribute.name.generic.attack_speed\"}]}"
+        ],
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.berserkers_rage\"}"
+      }
+    }
+  }
+}

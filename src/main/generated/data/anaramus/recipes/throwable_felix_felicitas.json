@@ -1,0 +1,199 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": true,
+  "ingredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 5,
+      "ingredient": {
+        "item": "minecraft:small_dripleaf"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:pitcher_plant"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:sunflower"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:seagrass"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:goat_horn"
+      }
+    },
+    {
+      "amount": 5,
+      "ingredient": {
+        "item": "minecraft:glow_lichen"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:hanging_roots"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:warped_roots"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:nether_sprouts"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:cornflower"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:torchflower"
+      }
+    },
+    {
+      "amount": 13,
+      "ingredient": {
+        "item": "minecraft:pink_petals"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:spore_blossom"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:emerald"
+      }
+    },
+    {
+      "amount": 5,
+      "ingredient": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:pitcher_pod"
+      }
+    },
+    {
+      "amount": 6,
+      "ingredient": {
+        "item": "minecraft:scute"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:ghast_tear"
+      }
+    },
+    {
+      "amount": 9,
+      "ingredient": {
+        "item": "minecraft:big_dripleaf"
+      }
+    },
+    {
+      "amount": 5,
+      "ingredient": {
+        "item": "minecraft:chorus_fruit"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:totem_of_undying"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:popped_chorus_fruit"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:echo_shard"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:splash_potion",
+    "tag": {
+      "CustomPotionColor": -16737997,
+      "HideFlags": 32,
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 100,
+          "duration": 24000,
+          "id": "minecraft:luck",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.luck\"},{\"translate\":\"potion.potency.100\"}]},{\"text\":\"20:00\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"101\",{\"translate\":\"attribute.name.generic.luck\"}]}"
+        ],
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.felix_felicitas\"}"
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": false,
+  "ingredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:echo_shard"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:moss_block"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:soul_sand"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:pointed_dripstone"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:quartz"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:amethyst_shard"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:scute"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:shulker_shell"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:dragon_breath"
+      }
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:lingering_potion",
+    "tag": {
+      "CustomPotionColor": -12763863,
+      "HideFlags": 32,
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 4,
+          "duration": 9600,
+          "id": "minecraft:resistance",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 9600,
+          "id": "minecraft:slowness",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.resistance\"},{\"translate\":\"potion.potency.4\"}]},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.slowness\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"attribute.modifier.take.2\",\"with\":[\"30\",{\"translate\":\"attribute.name.generic.movement_speed\"}]}"
+        ],
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.stoneskin\"}"
+      }
+    }
+  }
+}

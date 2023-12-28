@@ -59,6 +59,8 @@
     "Count": 1,
     "id": "minecraft:potion",
     "tag": {
+      "CustomPotionColor": -13395661,
+      "HideFlags": 32,
       "custom_potion_effects": [
         {
           "ambient": 0,
@@ -70,6 +72,12 @@
         }
       ],
       "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.luck\"},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"1\",{\"translate\":\"attribute.name.generic.luck\"}]}"
+        ],
         "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.luck0\"}"
       }
     }

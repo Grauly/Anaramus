@@ -47,6 +47,8 @@
     "Count": 1,
     "id": "minecraft:potion",
     "tag": {
+      "CustomPotionColor": -16777216,
+      "HideFlags": 32,
       "custom_potion_effects": [
         {
           "ambient": 0,
@@ -74,6 +76,14 @@
         }
       ],
       "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.bad_omen\"},{\"text\":\"20:00\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.nausea\"},{\"text\":\"00:30\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.weakness\"},{\"text\":\"02:00\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"attribute.modifier.take.0\",\"with\":[\"4\",{\"translate\":\"attribute.name.generic.attack_damage\"}]}"
+        ],
         "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.bad_omen\"}"
       }
     }

@@ -1,0 +1,91 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": false,
+  "ingredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:chorus_flower"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:pink_petals"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:phantom_membrane"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:feather"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:shulker_shell"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:popped_chorus_fruit"
+      }
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:potion",
+    "tag": {
+      "CustomPotionColor": -52,
+      "HideFlags": 32,
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 600,
+          "id": "minecraft:levitation",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 1200,
+          "id": "minecraft:slow_falling",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.levitation\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"00:30\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.slow_falling\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"01:00\"}]}"
+        ],
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.floatation\"}"
+      }
+    }
+  }
+}

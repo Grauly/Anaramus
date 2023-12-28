@@ -1,0 +1,130 @@
+{
+  "type": "anaramus:cauldron_brewing",
+  "activationIngredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "consumeAllWater": true,
+  "ingredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:sugar"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:prismarine_crystals"
+      }
+    },
+    {
+      "amount": 5,
+      "ingredient": {
+        "item": "minecraft:prismarine_shard"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glow_ink_sac"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:scute"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:lapis_lazuli"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:pufferfish"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "tag": "anaramus:alive_corals"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:warped_roots"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:crimson_roots"
+      }
+    }
+  ],
+  "needsFire": true,
+  "result": {
+    "Count": 1,
+    "id": "minecraft:potion",
+    "tag": {
+      "CustomPotionColor": -6710785,
+      "HideFlags": 32,
+      "custom_potion_effects": [
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 9600,
+          "id": "minecraft:water_breathing",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 9600,
+          "id": "minecraft:conduit_power",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
+          "amplifier": 1,
+          "duration": 9600,
+          "id": "minecraft:night_vision",
+          "show_icon": 1,
+          "show_particles": 1
+        }
+      ],
+      "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.water_breathing\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.conduit_power\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.night_vision\"},{\"translate\":\"potion.potency.1\"}]},{\"text\":\"08:00\"}]}"
+        ],
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.neptunes_wake\"}"
+      }
+    }
+  }
+}

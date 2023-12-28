@@ -53,6 +53,8 @@
     "Count": 1,
     "id": "minecraft:potion",
     "tag": {
+      "CustomPotionColor": -4194560,
+      "HideFlags": 32,
       "custom_potion_effects": [
         {
           "ambient": 0,
@@ -80,6 +82,16 @@
         }
       ],
       "display": {
+        "Lore": [
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.haste\"},{\"translate\":\"potion.potency.4\"}]},{\"text\":\"20:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.speed\"},{\"text\":\"20:00\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.luck\"},{\"text\":\"02:00\"}]}",
+          "{\"italic\":false,\"text\":\"\"}",
+          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.2\",\"with\":[\"50\",{\"translate\":\"attribute.name.generic.attack_speed\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.2\",\"with\":[\"20\",{\"translate\":\"attribute.name.generic.movement_speed\"}]}",
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"1\",{\"translate\":\"attribute.name.generic.luck\"}]}"
+        ],
         "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.miners_fervor\"}"
       }
     }

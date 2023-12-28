@@ -158,7 +158,7 @@ public class ModItemDefinitions {
     public static ItemStack getStoneSkinPotion(Item item) {
         return constructPotion(item,
                 List.of(
-                        new StatusEffectInstance(StatusEffects.RESISTANCE, 8 * 60 * 20, 3),
+                        new StatusEffectInstance(StatusEffects.RESISTANCE, 8 * 60 * 20, 4),
                         new StatusEffectInstance(StatusEffects.SLOWNESS, 8 * 60 * 20, 1)
                 ),
                 new Color(61, 61, 41),

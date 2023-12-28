@@ -18,31 +18,31 @@
       }
     },
     {
-      "amount": 3,
+      "amount": 1,
       "ingredient": {
-        "item": "minecraft:small_dripleaf"
+        "item": "minecraft:sugar"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:glow_berries"
+        "item": "minecraft:fermented_spider_eye"
       }
     },
     {
-      "amount": 3,
+      "amount": 2,
       "ingredient": {
-        "item": "minecraft:rabbit_foot"
+        "item": "minecraft:redstone"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:pink_petals"
+        "item": "minecraft:fermented_spider_eye"
       }
     },
     {
-      "amount": 1,
+      "amount": 4,
       "ingredient": {
         "item": "minecraft:glow_lichen"
       }
@@ -50,41 +50,47 @@
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:glistering_melon_slice"
+        "item": "minecraft:crimson_roots"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:sea_pickle"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:gunpowder"
+        "item": "minecraft:phantom_membrane"
       }
     }
   ],
   "needsFire": true,
   "result": {
     "Count": 1,
-    "id": "minecraft:splash_potion",
+    "id": "minecraft:potion",
     "tag": {
-      "CustomPotionColor": -13395661,
+      "CustomPotionColor": -10053223,
       "HideFlags": 32,
       "custom_potion_effects": [
         {
           "ambient": 0,
-          "amplifier": 2,
-          "duration": 9600,
-          "id": "minecraft:luck",
+          "amplifier": 10,
+          "duration": 2400,
+          "id": "minecraft:slowness",
           "show_icon": 1,
           "show_particles": 1
         }
       ],
       "display": {
         "Lore": [
-          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.luck\"},{\"translate\":\"potion.potency.2\"}]},{\"text\":\"08:00\"}]}",
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.slowness\"},{\"translate\":\"potion.potency.10\"}]},{\"text\":\"02:00\"}]}",
           "{\"italic\":false,\"text\":\"\"}",
           "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
-          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"3\",{\"translate\":\"attribute.name.generic.luck\"}]}"
+          "{\"italic\":false,\"color\":\"red\",\"translate\":\"attribute.modifier.take.2\",\"with\":[\"165\",{\"translate\":\"attribute.name.generic.movement_speed\"}]}"
         ],
-        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.luck2\"}"
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.paralysis\"}"
       }
     }
   }

@@ -18,13 +18,37 @@
       }
     },
     {
-      "amount": 1,
+      "amount": 3,
       "ingredient": {
-        "item": "minecraft:small_dripleaf"
+        "item": "minecraft:redstone"
+      }
+    },
+    {
+      "amount": 2,
+      "ingredient": {
+        "item": "minecraft:ghast_tear"
+      }
+    },
+    {
+      "amount": 6,
+      "ingredient": {
+        "item": "minecraft:golden_carrot"
       }
     },
     {
       "amount": 1,
+      "ingredient": {
+        "item": "minecraft:hanging_roots"
+      }
+    },
+    {
+      "amount": 4,
+      "ingredient": {
+        "item": "minecraft:cocoa_beans"
+      }
+    },
+    {
+      "amount": 2,
       "ingredient": {
         "item": "minecraft:glow_berries"
       }
@@ -32,25 +56,7 @@
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:rabbit_foot"
-      }
-    },
-    {
-      "amount": 1,
-      "ingredient": {
-        "item": "minecraft:pink_petals"
-      }
-    },
-    {
-      "amount": 1,
-      "ingredient": {
-        "item": "minecraft:glow_lichen"
-      }
-    },
-    {
-      "amount": 1,
-      "ingredient": {
-        "item": "minecraft:glistering_melon_slice"
+        "item": "minecraft:crimson_roots"
       }
     },
     {
@@ -65,26 +71,23 @@
     "Count": 1,
     "id": "minecraft:lingering_potion",
     "tag": {
-      "CustomPotionColor": -13395661,
+      "CustomPotionColor": -65434,
       "HideFlags": 32,
       "custom_potion_effects": [
         {
           "ambient": 0,
-          "amplifier": 0,
-          "duration": 9600,
-          "id": "minecraft:luck",
+          "amplifier": 4,
+          "duration": 1,
+          "id": "minecraft:instant_health",
           "show_icon": 1,
           "show_particles": 1
         }
       ],
       "display": {
         "Lore": [
-          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withDuration\",\"with\":[{\"translate\":\"effect.minecraft.luck\"},{\"text\":\"08:00\"}]}",
-          "{\"italic\":false,\"text\":\"\"}",
-          "{\"italic\":false,\"color\":\"dark_purple\",\"translate\":\"potion.whenDrank\"}",
-          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"attribute.modifier.plus.0\",\"with\":[\"1\",{\"translate\":\"attribute.name.generic.luck\"}]}"
+          "{\"italic\":false,\"color\":\"blue\",\"translate\":\"potion.withAmplifier\",\"with\":[{\"translate\":\"effect.minecraft.instant_health\"},{\"translate\":\"potion.potency.4\"}]}"
         ],
-        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.luck0\"}"
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.greater_healing\"}"
       }
     }
   }
