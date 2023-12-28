@@ -8,6 +8,18 @@
     {
       "amount": 1,
       "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
         "item": "minecraft:fermented_spider_eye"
       }
     },
@@ -44,31 +56,31 @@
       "custom_potion_effects": [
         {
           "ambient": 0,
+          "amplifier": 5,
+          "duration": 1200,
+          "id": "minecraft:poison",
+          "show_icon": 1,
+          "show_particles": 1
+        },
+        {
+          "ambient": 0,
           "amplifier": 4,
-          "duration": 24000,
-          "id": "minecraft:haste",
+          "duration": 1,
+          "id": "minecraft:instant_damage",
           "show_icon": 1,
           "show_particles": 1
         },
         {
           "ambient": 0,
           "amplifier": 0,
-          "duration": 24000,
-          "id": "minecraft:speed",
-          "show_icon": 1,
-          "show_particles": 1
-        },
-        {
-          "ambient": 0,
-          "amplifier": 0,
-          "duration": 2400,
-          "id": "minecraft:luck",
+          "duration": 600,
+          "id": "minecraft:wither",
           "show_icon": 1,
           "show_particles": 1
         }
       ],
       "display": {
-        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.miners_fervor\"}"
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.greater_poison\"}"
       }
     }
   }

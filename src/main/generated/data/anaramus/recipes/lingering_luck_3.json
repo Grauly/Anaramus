@@ -3,7 +3,7 @@
   "activationIngredient": {
     "item": "minecraft:glass_bottle"
   },
-  "consumeAllWater": true,
+  "consumeAllWater": false,
   "ingredients": [
     {
       "amount": 1,
@@ -18,63 +18,59 @@
       }
     },
     {
-      "amount": 1,
+      "amount": 3,
       "ingredient": {
-        "item": "minecraft:goat_horn"
+        "item": "minecraft:small_dripleaf"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:crossbow"
+        "item": "minecraft:glow_berries"
+      }
+    },
+    {
+      "amount": 3,
+      "ingredient": {
+        "item": "minecraft:rabbit_foot"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:white_banner"
+        "item": "minecraft:pink_petals"
       }
     },
     {
       "amount": 1,
       "ingredient": {
-        "item": "minecraft:saddle"
+        "item": "minecraft:glow_lichen"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:glistering_melon_slice"
       }
     }
   ],
   "needsFire": true,
   "result": {
     "Count": 1,
-    "id": "minecraft:potion",
+    "id": "minecraft:lingering_potion",
     "tag": {
       "custom_potion_effects": [
         {
           "ambient": 0,
-          "amplifier": 0,
-          "duration": 24000,
-          "id": "minecraft:bad_omen",
-          "show_icon": 1,
-          "show_particles": 1
-        },
-        {
-          "ambient": 0,
-          "amplifier": 0,
-          "duration": 600,
-          "id": "minecraft:nausea",
-          "show_icon": 1,
-          "show_particles": 1
-        },
-        {
-          "ambient": 0,
-          "amplifier": 0,
-          "duration": 2400,
-          "id": "minecraft:weakness",
+          "amplifier": 2,
+          "duration": 9600,
+          "id": "minecraft:luck",
           "show_icon": 1,
           "show_particles": 1
         }
       ],
       "display": {
-        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.bad_omen\"}"
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.luck2\"}"
       }
     }
   }

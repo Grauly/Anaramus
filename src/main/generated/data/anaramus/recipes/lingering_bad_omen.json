@@ -45,7 +45,7 @@
   "needsFire": true,
   "result": {
     "Count": 1,
-    "id": "minecraft:potion",
+    "id": "minecraft:lingering_potion",
     "tag": {
       "custom_potion_effects": [
         {

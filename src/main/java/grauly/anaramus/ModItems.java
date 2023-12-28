@@ -13,6 +13,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
+import java.util.function.Function;
+
 import static grauly.anaramus.Anaramus.MODID;
 
 public class ModItems {
@@ -23,7 +25,23 @@ public class ModItems {
             .displayName(Text.translatable("itemGroup.anaramus.main"))
             .entries((context, entries) -> {
                 entries.add(POTION_CAULDRON_ITEM);
-                entries.add(ModItemDefinitions.getBadOmenPotion());
+                putAllPotionVariants(entries, ModItemDefinitions::getBadOmenPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getMinersFervorPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getGreaterPoisonPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getFelixFelicitas);
+                putAllPotionVariants(entries, item -> ModItemDefinitions.getLuckPotion(item,1));
+                putAllPotionVariants(entries, item -> ModItemDefinitions.getLuckPotion(item,2));
+                putAllPotionVariants(entries, item -> ModItemDefinitions.getLuckPotion(item,3));
+                putAllPotionVariants(entries, ModItemDefinitions::getBlindExertionPotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getBerserkersRagePotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getNeptunesWakePotion);
+                putAllPotionVariants(entries, ModItemDefinitions::getParalysisPotion);
             })
             .build();
+
+    public static void putAllPotionVariants(ItemGroup.Entries entries, Function<Item, ItemStack> potionFunction) {
+        entries.add(potionFunction.apply(Items.POTION));
+        entries.add(potionFunction.apply(Items.SPLASH_POTION));
+        entries.add(potionFunction.apply(Items.LINGERING_POTION));
+    }
 }

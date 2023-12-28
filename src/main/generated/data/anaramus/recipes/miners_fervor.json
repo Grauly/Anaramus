@@ -8,6 +8,18 @@
     {
       "amount": 1,
       "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
         "item": "minecraft:emerald"
       }
     },

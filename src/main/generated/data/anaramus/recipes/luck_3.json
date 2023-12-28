@@ -6,6 +6,18 @@
   "consumeAllWater": false,
   "ingredients": [
     {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "amount": 1,
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    {
       "amount": 3,
       "ingredient": {
         "item": "minecraft:small_dripleaf"
@@ -18,7 +30,7 @@
       }
     },
     {
-      "amount": 1,
+      "amount": 3,
       "ingredient": {
         "item": "minecraft:rabbit_foot"
       }
@@ -50,13 +62,16 @@
       "custom_potion_effects": [
         {
           "ambient": 0,
-          "amplifier": 3,
+          "amplifier": 2,
           "duration": 9600,
           "id": "minecraft:luck",
           "show_icon": 1,
           "show_particles": 1
         }
-      ]
+      ],
+      "display": {
+        "Name": "{\"italic\":false,\"translate\":\"potions.anaramus.luck2\"}"
+      }
     }
   }
 }
