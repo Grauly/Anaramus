@@ -41,7 +41,9 @@ public record AmountedIngredient(Ingredient ingredient, int amount) {
             if (ingredient instanceof AmountedIngredient innerIngredient) {
                 list.add(innerIngredient);
             } else if (ingredient instanceof List innerList) {
-                list.addAll(concat(innerList));
+                for (Object innerListContent : innerList) {
+                    list.addAll(concat(innerListContent));
+                }
             } else {
                 throw new IllegalArgumentException("AmountedIngredient#concat can only take AmountedIngredient or List<AmountedIngredient>, not " + ingredient.getClass().getName());
             }
