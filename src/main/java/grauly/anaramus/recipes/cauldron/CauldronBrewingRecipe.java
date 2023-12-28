@@ -33,8 +33,8 @@ public class CauldronBrewingRecipe implements Recipe<SimpleInventory>, PolymerRe
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
+        if (inventory.stacks.size() != ingredients.size()) return false;
         boolean correct = true;
-        if (inventory.stacks.size() < ingredients.size()) return false;
         for (int i = 0; i < ingredients.size(); i++) {
             correct &= ingredients.get(i).ingredient().test(inventory.stacks.get(i)) && ingredients.get(i).amount() == inventory.stacks.get(i).getCount();
         }
